@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/wlcmback"
+    tools:context=".activity.Wlcmctivity">
+
+    <ImageView
+        android:id="@+id/logoWhite"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:src="@drawable/logowhite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/txtview"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/logoWhite"
+        android:gravity="center"
+        android:textSize="33sp"
+        android:textColor="@color/white"
+        android:text="Saty High. \nStay Happy.\nAlways."
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+    <RelativeLayout
+        android:id="@+id/btngrp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/txtview"
+        android:orientation="horizontal"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnReg"
+            android:layout_marginLeft="20dp"
+            android:backgroundTint="@color/white"
+            android:text="Join"
+            android:padding="10dp"
+            android:textColor="@color/green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_marginRight="20dp"
+            android:layout_alignParentEnd="true"
+            android:text="Log In"
+
+            android:background="@drawable/white_border"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:drawablePadding="10dp"
+        android:drawableStart="@drawable/google"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:layout_below="@id/btngrp"
+        android:text="Continue with google"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/google" />
+    <ProgressBar
+        android:progress="70"
+        android:layout_alignParentBottom="true"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

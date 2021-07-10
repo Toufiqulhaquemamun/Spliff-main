@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1"
+    tools:context=".ui.gallery.ProductDetailsFragment">
+
+    <LinearLayout
+        android:layout_weight="0.6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/img_details"
+            android:src="@drawable/flower"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/txt"
+        android:padding="10dp"
+        android:layout_weight="0.2"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/firm"
+            android:text="PURE SUN FIRMS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_below="@id/firm"
+           android:layout_marginTop="20dp"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:text="Indica blend"
+            android:id="@+id/prodName"
+            android:textColor="?android:textColorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_below="@id/prodName"
+            android:layout_marginTop="20dp"
+            android:textSize="17sp"
+            android:id="@+id/desc"
+            android:text="Lorem Ipsum is a context Lorem Ipsum is a context Lorem Ipsum is a context Lorem Ipsum is a context Lorem Ipsum is a context Lorem Ipsum is a context"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <RelativeLayout
+            android:layout_marginTop="20dp"
+           android:layout_below="@id/desc"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/add"
+                android:layout_centerVertical="true"
+                android:textSize="20sp"
+                android:src="@drawable/ic_baseline_add_24"
+                android:layout_marginLeft="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/count"
+                android:layout_toRightOf="@id/add"
+                android:text="1"
+                android:layout_centerVertical="true"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:textColor="?android:textColorPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <ImageView
+                android:layout_toRightOf="@id/count"
+                android:id="@+id/remove"
+                android:layout_centerVertical="true"
+                android:textSize="20sp"
+                android:src="@drawable/ic_baseline_remove_24"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_toLeftOf="@id/unit"
+                android:textStyle="bold"
+                android:textColor="@color/green"
+                android:layout_centerVertical="true"
+                android:text="$20/"
+                android:textSize="25sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/unit"
+                android:layout_alignParentEnd="true"
+                android:text="Gram"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true" />
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_weight="0.2"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txttot"
+            android:layout_centerVertical="true"
+            android:text="Total : "
+            android:textSize="20sp"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+
+            android:layout_toRightOf="@id/txttot"
+            android:id="@+id/txttotal"
+            android:textStyle="bold"
+            android:textColor="@color/green"
+            android:layout_centerVertical="true"
+            android:text="$20"
+            android:textSize="25sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:layout_marginRight="20dp"
+            android:text="Add to Bag"
+            android:backgroundTint="@color/green"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true" />
+
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

@@ -4,8 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
+import com.mamun.spliff.R
 import com.mamun.spliff.databinding.FragmentHomeBinding
 import com.mamun.spliff.model.Product
 import com.mamun.spliff.utils.DatabaseHelper
@@ -16,7 +19,12 @@ class HomeFragment : Fragment() {
     private lateinit var homeViewModel: HomeViewModel
     private var _binding: FragmentHomeBinding? = null
 
+    private var offerItem : LinearLayout ? =null
+    private var cardItem : LinearLayout ? =null
+
     private val productsList: MutableList<Product> = ArrayList()
+
+    private var flag: Int = 0;
 
 
     // This property is only valid between onCreateView and
@@ -34,16 +42,31 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
+        offerItem = root.findViewById(R.id.offerItem)
+        cardItem = root.findViewById(R.id.cardItem)
+        val db = DatabaseHelper(context)
 
 //       val textView: TextView = binding.textHome
 //        homeViewModel.text.observe(viewLifecycleOwner, Observer {
 //            textView.text = it
 //        })
+        cardItem?.setOnClickListener {
+            Navigation.findNavController(it).navigate(R.id.nav_gallery)
+        }
+        offerItem?.setOnClickListener {
+            Navigation.findNavController(it).navigate(R.id.nav_gallery)
+        }
+
+        if(db.getAllProductGroup()!!.size <= 0)
+        {
+           additemtoList()
+        }
 //        additemtoList()
         return root
     }
 
     private fun additemtoList() {
+        flag=1
         var productitem = Product()
         val db = DatabaseHelper(context)
 

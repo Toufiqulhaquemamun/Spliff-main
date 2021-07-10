@@ -16,7 +16,7 @@ class DatabaseHelper(private val mContext: Context?) : SQLiteOpenHelper(
 
     companion object {
         private const val TAG = "DatabaseHandler"
-        private const val DATABASE_VERSION = 5
+        private const val DATABASE_VERSION = 1
         private const val DATABASE_NAME = "PRODUCT_ITEM"
 
         //Table Name
@@ -138,7 +138,7 @@ class DatabaseHelper(private val mContext: Context?) : SQLiteOpenHelper(
         return prodGroup
     }
 
-    fun updateMarked(productNO: Int) {
+    fun updateMarked(productNO: String) {
         val `val` = 1
         val db = this.writableDatabase
         val query = "UPDATE " + TABLE_PRODUCT + " SET " + COLUMN_PRODUCT_FAV +

@@ -5,16 +5,23 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import androidx.core.net.toUri
-import androidx.core.text.HtmlCompat
+import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.mamun.spliff.R
 import com.mamun.spliff.model.Product
+import com.mamun.spliff.utils.ApplicationContext.Companion.context
+import com.mamun.spliff.utils.DatabaseHelper
 import com.squareup.picasso.Picasso
 
-class ProductAdapter(private val prodList: List<Product>?
-,private val listener: ProductItemListener) :
+class ProductAdapter(
+    activity: FragmentActivity?
+    , private val prodList: List<Product>?, private val listener: ProductItemListener
+) :
     RecyclerView.Adapter<ProductAdapter.MyViewHolder>() {
+
+    var context =activity;
+
+    var db = DatabaseHelper(activity)
     interface ProductItemListener {
         fun onProductSelected(product: Product?)
     }
@@ -34,6 +41,8 @@ class ProductAdapter(private val prodList: List<Product>?
             holder.unitPrize.text = "$"+prod.price
             holder.addFav.setOnClickListener {
                 Log.d("TAG", "onBindViewHolder: added to cart")
+                db.updateMarked(prod.prodNo.toString())
+                Toast.makeText(context, "Item Added to Cart", Toast.LENGTH_SHORT).show()
             }
         }
     }

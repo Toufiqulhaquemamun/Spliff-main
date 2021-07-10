@@ -62,7 +62,7 @@
             android:layout_gravity="center"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:src="@drawable/ic_add_24"
+            android:src="@drawable/ic_baseline_remove_24"
             android:backgroundTint="@color/green"
             android:layout_width="60dp"
             android:layout_height="60dp"/>

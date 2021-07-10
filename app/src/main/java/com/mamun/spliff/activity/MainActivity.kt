@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
 
 
         val drawerLayout: DrawerLayout = binding.drawerLayout
-        val textEmail: TextView = findViewById(R.id.userMail)
+//        val textEmail: TextView = findViewById(R.id.userMail)
         val iconDrawer = findViewById<ImageView>(R.id.floatingActionButton)
         val navView: NavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_content_main)

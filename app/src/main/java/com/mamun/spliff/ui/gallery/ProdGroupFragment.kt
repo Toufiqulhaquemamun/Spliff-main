@@ -48,7 +48,7 @@ class ProdGroupFragment : Fragment() , ProductAdapter.ProductItemListener {
         val prodList = db.getProductInfoByGroup(group)
         val mLayoutManager: RecyclerView.LayoutManager = LinearLayoutManager(activity)
         prodListView!!.layoutManager = mLayoutManager
-        val adapter = ProductAdapter(prodList,this)
+        val adapter = ProductAdapter(activity,prodList,this)
         prodListView!!.removeAllViews()
         prodListView!!.setHasFixedSize(true)
         prodListView!!.itemAnimator = DefaultItemAnimator()
